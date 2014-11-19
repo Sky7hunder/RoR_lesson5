@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="authorization">
+    <% if current_user %>
+      <%= link_to 'Logout', sessions_logout_path, class: 'link_button' %>
+      <div class="user_greeting">
+        <p class="font_color"><%= current_user.name if current_user %></p>
+      </div>
+    <% else %>
+      <%= form_tag('/sessions', method: :post, class: 'form') do%>
+        <div class="field">
+          <%= text_field_tag :email %>
+        </div>
+        <div class="field">
+          <%= password_field_tag  :password %>
+        </div>
+        <div class="actions">
+          <%= submit_tag 'Login' %>
+        </div>
+      <% end %>
+
+      <%= link_to 'Registration', registration_path, :class => 'link_button' %>
+    <% end %>
+  </div>
+
+  <div class="wrapp">
+    <div id="header">
+      <%= link_to image_tag('logo.png', width: 100), root_path %>
+      <div class="blog_header">
+        <%= link_to 'All posts', root_path, class: 'bold' %>
+      </div>
+    </div>
+    <%= yield %>
+  </div>
+
+  <% if @banner_time %>
+    <div class="banner">
+      <strong>For the Horde!!!</strong>
+    </div>
+  <% end %>
+
+  <script>
+    $( "div.banner" ).click(function() {
+      $(this).remove();
+    });
+  </script>
+</body>
+</html>

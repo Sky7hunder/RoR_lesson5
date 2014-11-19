@@ -1,0 +1,25 @@
+<h1>Listing posts</h1>
+
+  <ul class="posts">
+    <% @posts.each do |post| %>
+      <li>
+        <span class="post_title"><%= post.title %></span>
+        <p><%= post.body %></p>
+        <span><%= post.tags %></span>
+        <span class="author"><%= User.find(post.id_user).name %></span>
+        <ul class="control_list">
+          <li><%= link_to 'Show', post %></li>
+          <li><%= link_to 'Edit', edit_post_path(post) %></li>
+          <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<br>
+
+    <% if current_user %>
+      <span><%= link_to 'New Post', new_post_path, class: 'bold link_button font-size' %> </span>
+    <% else %>
+      <span>Login to create post</span>
+    <% end %>
+

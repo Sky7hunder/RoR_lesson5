@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="post">
+  <strong class="post_title">
+    <%= @post.title %>
+  </strong>
+
+  <p>
+    <%= @post.body %>
+  </p>
+
+  <p>
+    <%= @post.tags %>
+  </p>
+  <ul class="control_list">
+    <li>
+      <%= link_to 'Edit', edit_post_path(@post) %>
+    </li>
+    <li>
+      <%= link_to 'Back', posts_path %>
+    </li>
+  </ul>
+</div>

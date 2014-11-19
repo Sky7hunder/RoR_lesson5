@@ -1,0 +1,179 @@
+@import "reset";
+
+$font-color: rgb(134, 99, 99);
+
+body {
+  position: relative;
+  background-image: image-url('bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: rgb(76, 36, 36);
+  background-position: bottom;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0px !important;
+}
+
+ul{
+  padding:0;
+  margin:0;
+  outline:none;
+  list-style:none;
+}
+
+h1 { color: $font-color; }
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #D57B05;
+  &:hover {
+    background-color: none;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+input, textarea {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(65, 29, 36, 0.93);
+  border: none;
+  color: #D57B05;
+  resize: none;
+}
+
+.banner {
+  width: 200px;
+  height: 100px;
+  background-color: #0F1F1A;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  border-radius: 10px;
+  text-align: center;
+  color: #D57B05;
+  padding-top: 80px;
+}
+
+.font-size{
+  font-size: 20px;
+}
+
+#header {
+  background-color: rgb(48, 27, 31);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.blog_header{
+  font-size: 20px;
+  color: $font-color;
+  display: inline;
+}
+
+.wrapp {
+  width: 700px;
+  margin: auto;
+}
+
+#notice {
+  color: green;
+}
+
+.form{
+  position: absolute;
+  top: 321px;
+  left: 139px;
+}
+
+.font_color{ color: $font-color}
+
+#authorization{
+  background-image: image-url('illidan.png');
+  background-repeat: no-repeat;
+  background-size: 70%;
+  right: 0px;
+  padding-bottom: 402px;
+  width: 399px;
+  background-position: right;
+  position: fixed;
+}
+
+#authorization a{
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #D57B05;;
+}
+
+.link_button {
+  background-color: #301b1f;
+  padding: 10px 10px 14px 10px;
+  border-radius: 10px;
+}
+
+.user_greeting{
+  background-image: image_url('comics.png');
+  background-repeat: no-repeat;
+  background-size: 55%;
+  width: 230px;
+  height: 101px;
+  position: absolute;
+  top: 65px;
+  right: 24px;
+  background-position: top;
+}
+
+.user_greeting > p {
+  text-align: center;
+  font-size: 16px;
+  padding-top: 22px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
